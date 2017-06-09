@@ -1,0 +1,233 @@
+input,
+select {
+  outline: none;
+}
+.content {
+  width: 96.5%;
+  float: right;
+}
+.title {
+  text-align: center;
+  font-size: 18px;
+  color: #999999;
+  margin-bottom: 30px;
+}
+.select-btn select {
+  outline: none;
+  width: 138px;
+  height: 40px;
+  margin-left: 40px;
+  font-size: 14px;
+  margin-bottom: 40px;
+}
+.fund-table {
+  float: left;
+  border-collapse: collapse;
+  border: 1px solid #ccc;
+  width: 100%;
+}
+.fund-table th {
+  text-align: center;
+  height: 60px;
+  border-bottom: 1px solid #ccc;
+  font-size: 14px;
+  font-weight: 400;
+  color: #333;
+}
+.fund-table td {
+  max-width: 70px;
+  text-align: center;
+  height: 60px;
+  font-size: 12px;
+  color: #333;
+}
+.fund-table tr td.rise {
+  color: #008000;
+}
+.fund-table tr td.plummet {
+  color: #ff0000;
+}
+.fund-table tr:hover {
+  border: 1px solid #ccc;
+}
+.fund-table tr td:last-child {
+  color: #0000ff;
+  cursor: pointer;
+}
+.fund-table tr td:nth-child(3),
+.fund-table tr td:nth-child(4) {
+  font-size: 14px;
+  color: #000;
+}
+.fund-table tr td:first-child {
+  color: #000;
+}
+.detail {
+  padding: 0 100px;
+  width: 93.5%;
+  margin: 0 auto;
+}
+.detail .detail-head {
+  margin-bottom: 40px;
+}
+.detail .detail-head .back-btn {
+  cursor: pointer;
+  float: left;
+  margin-left: -75px;
+  font-size: 18px;
+  font-weight: 700;
+  color: #999;
+}
+.detail .detail-head .title {
+  font-size: 18px;
+  color: #999;
+  display: inline-block;
+  width: 100%;
+  text-align: center;
+}
+.detail .order-steps span {
+  width: 25%;
+  display: inline-block;
+  height: 60px;
+  line-height: 60px;
+  text-align: center;
+  font-size: 14px;
+  color: #1e1e1e;
+  float: left;
+  font-weight: 700;
+  border: 1px solid #ccc;
+}
+.detail .warn-tip {
+  padding: 20px 0;
+  text-align: center;
+  display: inline-block;
+  width: 100%;
+}
+.detail .warn-tip i {
+  display: inline-block;
+  width: 32px;
+  height: 30px;
+  background: url('../images/warn.png') 0 0 no-repeat;
+  vertical-align: middle;
+  margin-right: 15px;
+}
+.detail .warn-tip span {
+  color: rgba(255, 102, 0, 0.86666667);
+}
+.detail .receipt {
+  background-color: #fff;
+}
+.detail .receipt ul {
+  display: inline-block;
+  border: 1px solid #ccc;
+  width: 100%;
+}
+.detail .receipt ul li {
+  color: #666;
+  font-size: 14px;
+  height: 70px;
+  line-height: 70px;
+  float: left;
+  width: 33.3%;
+  text-indent: 40px;
+}
+.detail .receipt ul li span {
+  font-size: 12px;
+  color: #000;
+  float: right;
+  margin-right: 40px;
+}
+.detail .receipt ul li:nth-child(1),
+.detail .receipt ul li:nth-child(2),
+.detail .receipt ul li:nth-child(3) {
+  border-bottom: 1px solid #ccc;
+}
+.detail .busy-table {
+  background-color: #fff;
+  width: 100%;
+  border-collapse: collapse;
+}
+.detail .busy-table .tb-tr {
+  border: 1px solid #ccc;
+}
+.detail .busy-table .tb-tr th,
+.detail .busy-table .tb-tr td {
+  color: rgba(51, 51, 51, 0.86666667);
+  font-weight: normal;
+  text-align: center;
+  padding: 15px 0;
+}
+.detail .remark-info {
+  height: 70px;
+  line-height: 70px;
+  border: 1px solid #ccc;
+}
+.detail .remark-info div {
+  text-align: center;
+  float: left;
+  width: 50%;
+}
+.detail .remark-info div span {
+  float: left;
+  margin-left: 40px;
+}
+.detail .account-info {
+  width: 100%;
+}
+.detail .account-info li.pay-account {
+  font-size: 14px;
+  font-weight: 700;
+  color: #333;
+}
+.detail .account-info li {
+  width: 50%;
+  color: rgba(51, 51, 51, 0.86666667);
+  border: 1px solid #ccc;
+  float: left;
+  height: 70px;
+  line-height: 70px;
+  text-align: center;
+}
+.detail .account-info li span {
+  float: left;
+  margin-left: 40px;
+}
+.detail .print {
+  margin-top: 40px;
+  border: 1px solid #ccc;
+  width: 100%;
+  display: inline-block;
+}
+.detail .print li {
+  height: 70px;
+  line-height: 70px;
+}
+.detail .print .code i {
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  background: url('../images/code.png') 0 0 no-repeat;
+  vertical-align: middle;
+  margin-left: 20px;
+}
+.detail .print .print-info {
+  float: left;
+  width: 43%;
+  line-height: 70px;
+  text-align: center;
+}
+.detail .print .print-info span {
+  float: left;
+  padding-left: 15px;
+}
+.detail .print-btn {
+  background: #f2f2f2;
+  border: 1px solid #ccc;
+  width: 100%;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 700;
+  color: #333;
+  height: 50px;
+  line-height: 50px;
+}

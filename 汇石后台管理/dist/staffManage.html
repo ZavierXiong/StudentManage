@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/menuLeft.css">
+    <link rel="stylesheet" href="../css/orderManage.css">
+</head>
+<style>
+    .title.staff-title{
+        margin-bottom:0;
+    }
+</style>
+<body >
+<div class="wrap" >
+    <div id="menu">
+    <div  class="menu_btn" v-on:click="drop_menu">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+    <ul id="currone_menu" v-bind:class="{ 'select_btn' : isSelect, 'unselect_btn' : !isSelect }">
+        <a href="../dist/invest.html"><li class="invest">智能投资</li></a>
+        <a href="../dist/price.html"><li class="price">行情</li></a>
+        <a href="../dist/orderManage.html"><li class="orderManage">订单管理</li></a>
+        <a href="../dist/AccountSettings.html"> <li class="accountSetting">账号设置</li></a>
+        <a href="../dist/companyInfo.html"> <li class="companyInfo">企业信息</li></a>
+        <a href="../dist/staffManage.html"><li class="staffManage">员工管理</li></a>
+        <a href="../dist/systemAnnoce.html"> <li class="systemAnnoce">系统公告</li></a>
+    </ul>
+</div>
+<div id="user-login">
+    <h1 class="logo">IDtouguangLOGO</h1>
+    <div class="user-info">
+        <i class="user-pic"></i>
+        <span class="user-name">张三</span>
+        <span class="sign-out" v-on:click="signOut">退出</span>
+    </div>
+</div>
+
+
+    <div id="mystaff">
+        <div class="content" >
+            <div class="title staff-title">
+                <span>用户信息</span>
+            </div>
+            <table class="fund-table">
+                <tr>
+                    <th>邮箱</th>
+                    <th>手机</th>
+                    <th>添加时间</th>
+                    <th>城市</th>
+                    <th>角色</th>
+                    <th>证件信息</th>
+                    <th>验证</th>
+                    <th>操作</th>
+                </tr>
+                <tr v-for="staff in staffTbs">
+                    <td v-for="td in staff.staffInfo">{{td.text}}</td>
+                    <td><span>详细</span></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
+
+</body>
+<script src="../js/vue.js"></script>
+<script src="../js/commonLeft.js"></script>
+<script>
+    var mystaff = new Vue({
+        el : '#mystaff',
+        data : {
+            staffTbs: [
+                {
+                    staffInfo:[
+                        {text:'PPAP@gmail.com'},
+                        {text:'18088887777'},
+                        {text:'2014/3/24日-23:21'},
+                        {text:'深圳市'},
+                        {text:'企业管理员'},
+                        {text:'澎湃'},
+                        {text:'否'}
+                    ]
+                },
+                {
+                    staffInfo:[
+                        {text:'PPAP@gmail.com'},
+                        {text:'18088887777'},
+                        {text:'2014/3/24日-23:21'},
+                        {text:'深圳市'},
+                        {text:'企业管理员'},
+                        {text:'澎湃'},
+                        {text:'否'}
+                    ]
+                },
+                {
+                    staffInfo:[
+                        {text:'PPAP@gmail.com'},
+                        {text:'18088887777'},
+                        {text:'2014/3/24日-23:21'},
+                        {text:'深圳市'},
+                        {text:'企业管理员'},
+                        {text:'澎湃'},
+                        {text:'否'}
+                    ]
+                },
+                {
+                    staffInfo:[
+                        {text:'PPAP@gmail.com'},
+                        {text:'18088887777'},
+                        {text:'2014/3/24日-23:21'},
+                        {text:'深圳市'},
+                        {text:'企业管理员'},
+                        {text:'澎湃'},
+                        {text:'否'}
+                    ]
+                },
+                {
+                    staffInfo:[
+                        {text:'PPAP@gmail.com'},
+                        {text:'18088887777'},
+                        {text:'2014/3/24日-23:21'},
+                        {text:'深圳市'},
+                        {text:'企业管理员'},
+                        {text:'澎湃'},
+                        {text:'否'}
+                    ]
+                },
+                {
+                    staffInfo:[
+                        {text:'PPAP@gmail.com'},
+                        {text:'18088887777'},
+                        {text:'2014/3/24日-23:21'},
+                        {text:'深圳市'},
+                        {text:'企业管理员'},
+                        {text:'澎湃'},
+                        {text:'否'}
+                    ]
+                },
+                {
+                    staffInfo:[
+                        {text:'PPAP@gmail.com'},
+                        {text:'18088887777'},
+                        {text:'2014/3/24日-23:21'},
+                        {text:'深圳市'},
+                        {text:'企业管理员'},
+                        {text:'澎湃'},
+                        {text:'否'}
+                    ]
+                },
+                {
+                    staffInfo:[
+                        {text:'PPAP@gmail.com'},
+                        {text:'18088887777'},
+                        {text:'2014/3/24日-23:21'},
+                        {text:'深圳市'},
+                        {text:'企业管理员'},
+                        {text:'澎湃'},
+                        {text:'否'}
+                    ]
+                },
+            ]
+        }
+    });
+</script>
+</html>

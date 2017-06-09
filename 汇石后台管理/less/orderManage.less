@@ -1,0 +1,236 @@
+@title_fz:18px;
+@title_cl:#999;
+input,select{
+  outline:none;
+}
+.content{
+  width:96.5%;
+  float:right;
+}
+.title{
+  text-align: center;
+  font-size:@title_fz;
+  color:@title_cl;
+  margin-bottom:30px;
+}
+.select-btn{
+  select{
+    outline:none;
+    width: 138px;
+    height: 40px;
+    margin-left: 40px;
+    font-size: 14px;
+    margin-bottom:40px;
+  }
+}
+.fund-table{
+  float:left;
+  border-collapse:collapse;
+  border:1px solid #ccc;
+  width:100%;
+  th{
+    text-align:center;
+    height:60px;
+    border-bottom:1px solid #ccc;
+    font-size:14px;
+    font-weight:400;
+    color:#333;
+  }
+  td{
+    max-width:70px;
+    text-align: center;
+    height:60px;
+    font-size:12px;
+    color:#333;
+  }
+  tr td.rise{
+    color:#008000;
+  }
+  tr td.plummet{
+    color:#ff0000;
+  }
+  tr:hover{
+    border:1px solid #ccc;
+  }
+  tr td:last-child{
+    color:#0000ff;
+    cursor:pointer;
+  }
+  tr td:nth-child(3),tr td:nth-child(4){
+    font-size:14px;
+    color:#000;
+  }
+  tr td:first-child{
+    color:#000;
+  }
+}
+.detail{
+  padding:0 100px;
+  width:93.5%;
+  margin:0 auto;
+  .detail-head{
+    margin-bottom:40px;
+    .back-btn{
+      cursor:pointer;
+      float:left;
+      margin-left:-75px;
+      font-size:18px;
+      font-weight:700;
+      color:#999;
+    }
+    .title{
+      font-size:18px;
+      color:#999;
+      display: inline-block;
+      width:100%;
+      text-align: center;
+    }
+  }
+  .order-steps{
+    span{
+      width: 25%;
+      display: inline-block;
+      height: 60px;
+      line-height: 60px;
+      text-align: center;
+      font-size: 14px;
+      color: #1e1e1e;
+      float: left;
+      font-weight: 700;
+      border:1px solid #ccc;
+    }
+  }
+  .warn-tip{
+    padding: 20px 0;
+    text-align: center;
+    display: inline-block;
+    width: 100%;
+    i{
+      display: inline-block;
+      width: 32px;
+      height: 30px;
+      background: url('../images/warn.png') 0 0 no-repeat;
+      vertical-align: middle;
+      margin-right: 15px;
+    }
+    span{
+      color:rgba(255, 102, 0, 0.866666666666667);
+    }
+  }
+  .receipt{
+    background-color:#fff;
+    ul{
+      display: inline-block;
+      border:1px solid #ccc;
+      width:100%;
+      li{
+        color:#666;
+        font-size:14px;
+        height:70px;
+        line-height: 70px;
+        float:left;
+        width:33.3%;
+        text-indent:40px;
+        span{
+          font-size:12px;
+          color:#000;
+          float:right;
+          margin-right:40px;
+        }
+      }
+      li:nth-child(1),li:nth-child(2),li:nth-child(3){
+        border-bottom:1px solid #ccc;
+      }
+    }
+  }
+  .busy-table{
+    background-color:#fff;
+    width:100%;
+    border-collapse:collapse;
+    .tb-tr{
+      border:1px solid #ccc;
+      th,td{
+        color:rgba(51, 51, 51, 0.866666666666667);
+        font-weight:normal;
+        text-align: center;
+        padding:15px 0;
+      }
+    }
+  }
+  .remark-info{
+    height:70px;
+    line-height: 70px;
+    border:1px solid #ccc;
+    div{
+      text-align: center;
+      float:left;
+      width:50%;
+      span{
+        float:left;
+        margin-left:40px;
+      }
+    }
+  }
+  .account-info{
+    width:100%;
+    li.pay-account{
+      font-size:14px;
+      font-weight:700;
+      color:#333;
+    }
+    li{
+      width:50%;
+      color:rgba(51, 51, 51, 0.866666666666667);
+      border:1px solid #ccc;
+      float:left;
+      height:70px;
+      line-height: 70px;
+      text-align: center;
+      span{
+        float:left;
+        margin-left:40px;
+      }
+    }
+  }
+  .print{
+    margin-top:40px;
+    border:1px solid #ccc;
+    width:100%;
+    display: inline-block;
+    li{
+      height:70px;
+      line-height:70px;
+    }
+    .code{
+      i{
+        display: inline-block;
+        width:50px;
+        height:50px;
+        background:url('../images/code.png') 0 0 no-repeat;
+        vertical-align: middle;
+        margin-left:20px;
+      }
+    }
+    .print-info{
+      float:left;
+      width:43%;
+      line-height:70px;
+      text-align:center;
+      span{
+        float:left;
+        padding-left:15px;
+      }
+    }
+  }
+  .print-btn{
+    background: rgb(242,242,242);
+    border: 1px solid #ccc;
+    width:100%;
+    text-align: center;
+    font-size:14px;
+    font-weight:700;
+    color:#333;
+    height:50px;
+    line-height:50px;
+  }
+}

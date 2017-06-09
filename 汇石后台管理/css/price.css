@@ -1,0 +1,201 @@
+input,
+select {
+  outline: none;
+}
+.content {
+  width: 1390px;
+  margin-left: 50px;
+}
+.type-title {
+  text-align: center;
+  font-size: 18px;
+  color: #999999;
+  margin-bottom: 30px;
+}
+.select-btn select {
+  outline: none;
+  width: 138px;
+  height: 40px;
+  margin-left: 40px;
+  font-size: 14px;
+  margin-bottom: 40px;
+}
+.fund-table {
+  float: left;
+  border-collapse: collapse;
+  border: 1px solid #ccc;
+  width: 74%;
+}
+.fund-table th {
+  text-align: center;
+  height: 60px;
+  border-bottom: 1px solid #ccc;
+  font-size: 14px;
+  font-weight: 400;
+  color: #333;
+}
+.fund-table td {
+  max-width: 70px;
+  text-align: center;
+  height: 60px;
+  font-size: 12px;
+  color: #333;
+}
+.fund-table tr td.rise {
+  color: #008000;
+}
+.fund-table tr td.plummet {
+  color: #ff0000;
+}
+.fund-table tr:hover {
+  border: 1px solid #ccc;
+}
+.fund-table tr td:nth-child(7) {
+  color: #000;
+}
+.buy-info {
+  width: 26%;
+  float: right;
+  padding: 0 15px;
+  border: 1px solid #ccc;
+  border-left: 0;
+}
+.buy-info .more-info {
+  display: inline-block;
+  width: 100%;
+  margin-bottom: 30px;
+}
+.buy-info .more-info li {
+  padding: 10px 0;
+  color: #666;
+  float: left;
+  width: 50%;
+  font-size: 12px;
+}
+.buy-info .more-info li span {
+  float: right;
+  color: #333;
+}
+.buy-info .more-info li:nth-child(even) {
+  float: right;
+  text-indent: 10px;
+}
+.buy-info .line-pic {
+  width: 100%;
+  border: 1px solid red;
+  height: 200px;
+  margin-bottom: 30px;
+}
+.buy-info .buy-operation .buy-title {
+  color: #333;
+  font-size: 14px;
+  margin-right: 100px;
+}
+.buy-info .buy-operation .operation-l {
+  position: relative;
+  margin-bottom: 15px;
+}
+.buy-info .buy-operation input {
+  text-indent: 5px;
+}
+.buy-info .buy-operation .input-box {
+  display: inline-block;
+  width: 120px;
+  height: 40px;
+}
+.buy-info .buy-operation .input-box .invest-money {
+  width: 170px;
+  height: 40px;
+  padding-right: 25px;
+}
+.buy-info .buy-operation .input-box .ten-thousand {
+  position: absolute;
+  right: 5px;
+  top: 50%;
+  margin-top: -10px;
+}
+.buy-info .buy-operation .input-box.lost-date input {
+  border: 1px solid #9A9A9A;
+  width: 64%;
+  height: 40px;
+  background: #F2F2F2;
+  color: #999;
+}
+.buy-info .buy-operation .input-box.lost-date select {
+  background: #F2F2F2;
+  height: 40px;
+  width: 36%;
+  float: right;
+  border-left: 0;
+  color: #999;
+}
+.buy-info .buy-operation .date-unit {
+  float: right;
+  border: 1px solid #ccc;
+  height: 40px;
+  width: 46px;
+  text-align: center;
+  line-height: 40px;
+  font-size: 14px;
+  color: #333;
+}
+.buy-info .buy-operation .date-unit.unit-today {
+  color: #999;
+  background: #f2f2f2;
+}
+.buy-info .buy-operation .buy-btn {
+  width: 100%;
+  text-align: center;
+  background: #FF0000;
+  height: 48px;
+  line-height: 48px;
+  color: #fff;
+  font-weight: 700;
+  font-size: 18px;
+  margin-bottom: 30px;
+}
+.tab-price {
+  display: inline-block;
+  width: 25%;
+  border: 1px solid #ccc;
+}
+.tab-price ul {
+  width: 100%;
+  display: inline-block;
+}
+.tab-price ul li {
+  width: 50%;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  float: left;
+  font-weight: 700;
+  font-size: 18px;
+  color: #666;
+  cursor: pointer;
+}
+.tab-price ul li:hover {
+  border-bottom: 3px solid #0066ff;
+}
+.tab-price table {
+  width: 100%;
+}
+.tab-price table th {
+  padding: 10px 0;
+  border-bottom: 1px solid #ccc;
+  font-size: 12px;
+  color: rgba(51, 51, 51, 0.86666667);
+  text-align: center;
+  font-weight: normal;
+}
+.tab-price table td {
+  padding: 10px 0;
+  text-align: center;
+  color: rgba(0, 0, 0, 0.86666667);
+  font-size: 12px;
+}
+.tab-price table td:nth-child(2),
+.tab-price table td:nth-child(3) {
+  color: #333;
+  font-weight: 700;
+}

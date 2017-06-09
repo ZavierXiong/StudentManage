@@ -1,0 +1,266 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/menuLeft.css">
+</head>
+<style>
+    .title.staff-title{
+        margin-bottom:0;
+    }
+    .content{
+        width:96.5%;
+        float:right;
+    }
+    .content .fund-table{
+        width:100%;
+        font-size:14px;
+        color:#333;
+    }
+    .fund-table th{
+        font-weight:normal;
+        padding-left: 50px;
+        border-bottom: 1px solid #ccc;
+        text-align: left;
+        height: 70px;
+        line-height: 70px;
+    }
+    .fund-table td{
+        height:70px;
+        line-height: 70px;
+        padding-left: 50px;
+    }
+    .operation-watch{
+        cursor:pointer;
+        color:#0066CC;
+    }
+    .detail {
+        /*padding: 0 100px;*/
+        width: 100%;
+        /*margin: 0 auto;*/
+    }
+    .detail-head {
+        margin-bottom: 40px;
+    }
+    .back-btn{
+        cursor:pointer;
+        float:left;
+        position:absolute;
+        font-size:18px;
+        font-weight:700;
+        color:#999;
+        line-height:70px;
+        height:70px;
+    }
+    .detail .title{
+        margin-left:0;
+        font-size:18px;
+        color:#999;
+        display: inline-block;
+        width:100%;
+        text-align: center;
+    }
+    .staff-info-more{
+        padding:0 100px;
+    }
+    .annoce-title{
+        text-align: center;
+        font-size: 28px;
+        color:#333;
+    }
+    .article-tag-box{
+        border-top:1px solid #ccc;
+        border-bottom:1px solid #ccc;
+        width:100%;
+        height:70px;
+        line-height:70px;
+    }
+    .article-tag-box .article-tag{
+        float:left;
+        font-size:14px;
+        color:#333;
+        width:33.3%;
+        text-align: center;
+    }
+    .article-tag-box .article-tag .tag-title{
+        margin-right:30px;
+    }
+    .article-content{
+        text-align: justify;
+        padding: 0 132px;
+        line-height:70px;
+        color:#333;
+    }
+</style>
+<body >
+<div class="wrap" >
+    @@include('common/commonMenu.html')
+    <div id="myannoce">
+        <div class="content" >
+            <div v-if="!isDetail">
+                <div class="title staff-title">
+                    <span>基金公告</span>
+                </div>
+                <table class="fund-table">
+                    <tr>
+                        <th>标题</th>
+                        <th>归宿</th>
+                        <th>时间</th>
+                        <th>操作</th>
+                    </tr>
+                    <tr v-for="annoce in annoceTbs">
+                        <td v-for="td in annoce.annoceInfo">{{td.text}}</td>
+                        <td><span class="operation-watch"  v-on:click="moredetail">查看</span></td>
+                    </tr>
+                </table>
+            </div>
+            <div class="detail" v-if="isDetail">
+                <div class="detail-head">
+                    <span v-on:click="backlist" class="back-btn">< 返回</span>
+                    <span class="title staff-title">公告</span>
+                </div>
+                <div class="staff-info-more">
+                    <h1 class="annoce-title">这是标题很黑很暴力</h1>
+                    <div class="article-tag-box">
+                        <div class="article-tag">
+                            <span class="tag-title">作者:</span>
+                            <span>admin</span>
+                        </div>
+                        <div class="article-tag">
+                            <span class="tag-title">时间:</span>
+                            <span>2013年12月31日-21:21</span>文章
+                        </div>
+                        <div class="article-tag">
+                            <span class="tag-title">标签:</span>
+                            <span>基金公告</span>
+                        </div>
+                    </div>
+                    <div class="article-content">
+                        <p>
+                            曲波先生，中国籍。2003年7月加入华夏基金管理有限公司，曾任交易管曲波先生，中国籍。2003年7月加入华夏基金管理有限公司，曾任交易管曲波先生，
+                            中国籍。2003年7月加入华夏基金管理有限公司，曾任交易管曲波先生，中国籍。2003年7月加入华夏基金管理有限公司，曾任交易管曲波先生，中国籍。
+                            2003年7月加入华夏基金管理有限公司，曾任交易管曲波先生，中国籍。2003年7月加入华夏基金管理有限公司，曾任交易管
+                            曲波先生，中国籍。2003年7月加入华夏基金管理有限公司，曾任交易管曲波先生，中国籍。2003年7月加入华夏基金管理有限公司，曾任交易管曲波先生，
+                            中国籍。2003年7月加入华夏基金管理有限公司，曾任交易管曲波先生，中国籍。2003年7月加入华夏基金管理有限公司，曾任交易管曲波先生，中国籍。
+                            2003年7月加入华夏基金管理有限公司，曾任交易管曲波先生，中国籍。2003年7月加入华夏基金管理有限公司，曾任交易管
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+</body>
+<script src="../js/vue.js"></script>
+<script src="../js/commonLeft.js"></script>
+<script>
+    var mystaff = new Vue({
+        el : '#myannoce',
+        data : {
+            isDetail : false,
+            annoceTbs: [
+                {
+                    annoceInfo:[
+                        {text:'曲波先生，中国籍。2003年7月加入华夏基金管理有限公司，曾任交易管'},
+                        {text:'基金:投资稳如狗不头白不投2'},
+                        {text:'2013年12月31日-21:21'},
+                    ]
+                },
+                {
+                    annoceInfo:[
+                        {text:'曲波先生，中国籍。2003年7月加入华夏基金管理有限公司，曾任交易管'},
+                        {text:'基金:投资稳如狗不头白不投2'},
+                        {text:'2013年12月31日-21:21'},
+                    ]
+                },
+                {
+                    annoceInfo:[
+                        {text:'曲波先生，中国籍。2003年7月加入华夏基金管理有限公司，曾任交易管'},
+                        {text:'基金:投资稳如狗不头白不投2'},
+                        {text:'2013年12月31日-21:21'},
+                    ]
+                },
+                {
+                    annoceInfo:[
+                        {text:'曲波先生，中国籍。2003年7月加入华夏基金管理有限公司，曾任交易管'},
+                        {text:'基金:投资稳如狗不头白不投2'},
+                        {text:'2013年12月31日-21:21'},
+                    ]
+                },
+                {
+                    annoceInfo:[
+                        {text:'曲波先生，中国籍。2003年7月加入华夏基金管理有限公司，曾任交易管'},
+                        {text:'基金:投资稳如狗不头白不投2'},
+                        {text:'2013年12月31日-21:21'},
+                    ]
+                },
+                {
+                    annoceInfo:[
+                        {text:'曲波先生，中国籍。2003年7月加入华夏基金管理有限公司，曾任交易管'},
+                        {text:'基金:投资稳如狗不头白不投2'},
+                        {text:'2013年12月31日-21:21'},
+                    ]
+                },
+                {
+                    annoceInfo:[
+                        {text:'曲波先生，中国籍。2003年7月加入华夏基金管理有限公司，曾任交易管'},
+                        {text:'基金:投资稳如狗不头白不投2'},
+                        {text:'2013年12月31日-21:21'},
+                    ]
+                },
+                {
+                    annoceInfo:[
+                        {text:'曲波先生，中国籍。2003年7月加入华夏基金管理有限公司，曾任交易管'},
+                        {text:'基金:投资稳如狗不头白不投2'},
+                        {text:'2013年12月31日-21:21'},
+                    ]
+                },
+                {
+                    annoceInfo:[
+                        {text:'曲波先生，中国籍。2003年7月加入华夏基金管理有限公司，曾任交易管'},
+                        {text:'基金:投资稳如狗不头白不投2'},
+                        {text:'2013年12月31日-21:21'},
+                    ]
+                },
+                {
+                    annoceInfo:[
+                        {text:'曲波先生，中国籍。2003年7月加入华夏基金管理有限公司，曾任交易管'},
+                        {text:'基金:投资稳如狗不头白不投2'},
+                        {text:'2013年12月31日-21:21'},
+                    ]
+                },
+                {
+                    annoceInfo:[
+                        {text:'曲波先生，中国籍。2003年7月加入华夏基金管理有限公司，曾任交易管'},
+                        {text:'基金:投资稳如狗不头白不投2'},
+                        {text:'2013年12月31日-21:21'},
+                    ]
+                },
+                {
+                    annoceInfo:[
+                        {text:'曲波先生，中国籍。2003年7月加入华夏基金管理有限公司，曾任交易管'},
+                        {text:'基金:投资稳如狗不头白不投2'},
+                        {text:'2013年12月31日-21:21'},
+                    ]
+                },
+            ]
+        },
+        methods :{
+            moredetail :function(){
+                this.isDetail = true;
+            },
+            backlist : function(){
+                this.isDetail = false;
+            }
+        }
+    });
+    mystaff.moredetail();
+    mystaff.backlist();
+</script>
+</html>

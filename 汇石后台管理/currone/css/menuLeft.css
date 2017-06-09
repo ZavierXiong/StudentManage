@@ -1,0 +1,123 @@
+* {
+  box-sizing: border-box;
+}
+ul {
+  list-style: none;
+  padding: 0;
+}
+a {
+  text-decoration: none;
+}
+.wrap {
+  width: 1440px;
+  margin: 0 auto;
+}
+#menu {
+  float: left;
+  display: inline-block;
+}
+.menu_btn {
+  position: relative;
+  z-index: 999;
+  width: 24px;
+  line-height: 5px;
+  display: inline-block;
+}
+.menu_btn span {
+  display: inline-block;
+  width: 100%;
+  height: 5px;
+  background-color: #999999;
+}
+.select_btn {
+  height: 980px;
+  transition: height 0.3s ease-in;
+  -moz-transition: height 0.3s ease-in;
+  -webkit-transition: height 0.3s ease-in;
+  -o-transition: height 0.3s ease-in;
+}
+.unselect_btn {
+  height: 0;
+  overflow: hidden;
+  border: none!important;
+  transition: height 0.3s ease-out;
+  -moz-transition: height 0.3s ease-out;
+  -webkit-transition: height 0.3s ease-out;
+  -o-transition: height 0.3s ease-out;
+}
+#currone_menu {
+  overflow: hidden;
+  width: 200px;
+  border: 1px solid #cccccc;
+}
+#currone_menu li {
+  cursor: pointer;
+  height: 50px;
+  line-height: 50px;
+  padding-left: 56px;
+}
+#currone_menu li a {
+  font-size: 14px;
+  color: #666666;
+}
+#currone_menu .invest {
+  background: url('../images/invest.png') 20px 50% no-repeat;
+}
+#currone_menu .price {
+  background: url('../images/price.png') 20px 50% no-repeat;
+}
+#currone_menu .orderManage {
+  border: 1px solid #cccccc;
+  border-left: none;
+  border-right: none;
+  background: url('../images/orderManage.png') 20px 50% no-repeat;
+}
+#currone_menu .accountSetting {
+  background: url('../images/accountSetting.png') 20px 50% no-repeat;
+}
+#currone_menu .companyInfo {
+  background: url('../images/companyInfo.png') 20px 50% no-repeat;
+  border-bottom: 1px solid #cccccc;
+}
+#currone_menu .staffManage {
+  background: url('../images/staffManage.png') 20px 50% no-repeat;
+}
+#currone_menu .systemAnnoce {
+  background: url('../images/systemAnnoce.png') 20px 50% no-repeat;
+}
+#user-login {
+  position: relative;
+  height: 41px;
+  line-height: 32px;
+  text-align: center;
+}
+#user-login .logo {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  margin: 0 auto;
+  display: inline-block;
+  font-size: 24px;
+  color: #29ABE2;
+}
+#user-login .sign-in,
+#user-login .sign-out,
+#user-login .sign-out {
+  cursor: pointer;
+}
+#user-login .sign-in,
+#user-login .user-info {
+  float: right;
+}
+#user-login .user-pic {
+  display: inline-block;
+  width: 40px;
+  height: 41px;
+  background: url('../images/user-pic.png') 0 0 no-repeat;
+  vertical-align: middle;
+  margin-right: 20px;
+}
+#user-login .user-name,
+#user-login .sign_in {
+  margin-right: 20px;
+}

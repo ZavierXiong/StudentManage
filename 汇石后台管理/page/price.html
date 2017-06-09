@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/menuLeft.css">
+    <link rel="stylesheet" href="../css/price.css">
+</head>
+<body >
+<div class="wrap" >
+    @@include('common/commonMenu.html')
+    <div class="content" id="myprice">
+        <div class="title">
+            <span>公募基金</span>
+        </div>
+        <div class="select-btn">
+            <select v-for="section in sections" v-model="section.selected">
+                <option v-for="option in section.options" v-bind:value="option.value">{{option.text}}</option>
+            </select>
+        </div>
+        <table class="fund-table">
+            <tr>
+                <th>编号</th>
+                <th>代码</th>
+                <th>名称</th>
+                <th>托管平台</th>
+                <th>流动性</th>
+                <th>起投金额</th>
+                <th>净值</th>
+                <th>7日年化</th>
+                <th>1月年化</th>
+                <th>1年</th>
+                <th>风险等级</th>
+                <th>状态</th>
+            </tr>
+            <tr v-for="table in tables">
+                <td v-for="td in table.tdinfo" v-bind:class="{plummet:/^\+.*\%$/.test(td.text),rise:/^\-.*\%$/.test(td.text)}">{{td.text}}</td>
+            </tr>
+        </table>
+        <div class="buy-info">
+            <ul class="more-info">
+                <li>代码<span>54801</span></li>
+                <li>名称<span>汇石中而型II</span></li>
+                <li>托管平台<span>中国工商银行</span></li>
+                <li>状态<span>产品停止交易</span></li>
+                <li>流动性<span>开放式T+0</span></li>
+                <li>登记企业<span>汇石金融</span></li>
+                <li>结算币种<span>人民币</span></li>
+                <li>起投金额<span>0.1百万</span></li>
+                <li>投资上限<span>100百万</span></li>
+                <li>风险等级<span>回信  96</span></li>
+            </ul>
+            <div class="line-pic">
+            </div>
+            <div class="buy-operation">
+                <div class="operation-l">
+                    <span class="buy-title">购买日期</span>
+                    <input  class="input-box" type="text" value="2017/1/21">
+                    <span class="date-unit unit-today">今天</span>
+                </div>
+                <div class="operation-l">
+                    <span class="buy-title">持有期限</span>
+                    <div class="input-box lost-date">
+                        <input type="text" value="30" >
+                        <select name="" id="">
+                            <option value="1">日</option>
+                        </select>
+                    </div>
+                    <span class="date-unit">不限</span>
+                </div>
+                <div class="operation-l">
+                    <span class="buy-title">投资金额</span>
+                    <div class="input-box">
+                        <input type="text" value="500" class="invest-money">
+                        <span class="ten-thousand">万</span>
+                    </div>
+                </div>
+                <div class="buy-btn">买入</div>
+            </div>
+        </div>
+        <div class="tab-price">
+            <ul>
+                <li>估值</li>
+                <li>系统公告</li>
+            </ul>
+            <table>
+                <tr>
+                    <th>估值日期</th>
+                    <th>单位净值</th>
+                    <th>收益率</th>
+                    <th>规模(份额)</th>
+                </tr>
+                <tr v-for="price in priceTables">
+                    <td v-for="temp in price.tdinfo">{{temp.text}}</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
+
+</body>
+<script src="../js/vue.js"></script>
+<script src="../js/commonLeft.js"></script>
+<script src="../js/price.js"></script>
+</html>

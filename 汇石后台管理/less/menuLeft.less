@@ -1,0 +1,141 @@
+body{
+  font-family: 'Arial Normal', 'Arial';
+  background-color:rgb(249,249,249);
+  overflow: auto;
+}
+*{
+  box-sizing:border-box;
+}
+ul{
+  list-style: none;
+  padding:0;
+  margin:0;
+}
+a{
+  text-decoration:none;
+}
+@menu_color:#666;
+.wrap{
+  width:1440px;
+  margin:0 auto;
+}
+#menu{
+  float:left;
+  display:inline-block;
+}
+.menu_btn{
+  margin-left:18px;
+  margin-bottom:20px;
+  position:relative;
+  z-index:999;
+  width:24px;
+  line-height:5px;
+  display:inline-block;
+  span{
+    display:inline-block;
+    width:100%;
+    height:5px;
+    background-color:rgb(153,153,153);
+  }
+}
+.select_btn{
+  width:200px;
+  transition: height .3s ease-in;
+  -moz-transition: height .3s ease-in;
+  -webkit-transition: height .3s ease-in;
+  -o-transition: height .3s ease-in;
+}
+.unselect_btn{
+  width:50px;
+  overflow: hidden;
+  border:none!important;
+  transition: height .3s ease-out;
+  -moz-transition: height .3s ease-out;
+  -webkit-transition: height .3s ease-out;
+  -o-transition: height .3s ease-out;
+}
+#currone_menu{
+  margin-top:-3px;
+  background-color:#f2f2f2;
+  position:absolute;
+  z-index:999;
+  overflow: hidden;
+  //width:200px;
+  border:1px solid rgb(204,204,204);
+  a{
+    font-size:14px;
+    color:@menu_color;
+    li{
+    cursor:pointer;
+    height:50px;
+    line-height:50px;
+    //border:1px solid red;
+    padding-left:56px;
+    }
+  }
+.invest{
+  background:url('../images/invest.png') 20px 50% no-repeat;
+}
+.price{
+  background:url('../images/price.png') 20px 50% no-repeat;
+}
+.orderManage{
+  border:1px solid rgb(204,204,204);
+  border-left:none;
+  border-right:none;
+  background:url('../images/orderManage.png') 20px 50% no-repeat;
+}
+.accountSetting{
+  background:url('../images/accountSetting.png') 20px 50% no-repeat;
+}
+.companyInfo{
+  background:url('../images/companyInfo.png') 20px 50% no-repeat;
+  border-bottom:1px solid rgb(204,204,204);
+}
+.staffManage{
+  background:url('../images/staffManage.png') 20px 50% no-repeat;
+}
+.systemAnnoce{
+  background:url('../images/systemAnnoce.png') 20px 50% no-repeat;
+}
+}
+#user-login{
+  position:relative;
+  height:41px;
+  line-height: 32px;
+  text-align:center;
+  .logo{
+    position:absolute;
+    left:50%;
+    transform:translateX(-50%);
+    margin:0 auto;
+    display: inline-block;
+    font-size:24px;
+    color:#29ABE2;
+  }
+  .sign-in,.sign-out,.sign-out{
+    cursor:pointer;
+  }
+  .sign-in,.user-info{
+    float:right;
+  }
+  .user-pic{
+    display: inline-block;
+    width:40px;
+    height:41px;
+    background:url('../images/user-pic.png') 0 0 no-repeat;
+    vertical-align: middle;
+    margin-right:20px;
+  }
+  .user-name,.sign_in{
+    margin-right:20px;
+  }
+}
+.title{
+  padding:20px 0;
+  background-color:#F2F2F2;
+  color:#999;
+  font-size:18px;
+  text-align: center;
+  margin-bottom:20px;
+}

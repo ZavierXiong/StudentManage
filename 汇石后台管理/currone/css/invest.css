@@ -1,0 +1,44 @@
+.content {
+  width: 86%;
+  float: right;
+}
+.content .title {
+  text-align: center;
+  margin-bottom: 60px;
+}
+.content .form-content {
+  margin: 0 auto;
+  width: 86%;
+}
+.content .form-content .title-info span {
+  font-weight: 400;
+  font-style: normal;
+  font-size: 14px;
+  color: #333333;
+}
+.content .form-content .title-info span.data-title {
+  margin-right: 150px;
+  margin-left: 50px;
+}
+.content .form-content .title-info span.data-title.week-money-rate {
+  color: #999;
+  font-weight: 700;
+  margin-left: 0;
+}
+.content .form-content .title-info span.gray-money {
+  font-weight: 700;
+  font-size: 18px;
+  color: #999;
+}
+.content .form-content .title-info span.stress {
+  font-weight: 700;
+  font-style: normal;
+  font-size: 36px;
+  color: #FF0000;
+}
+.content .form-content .title-info span.stress.big-data {
+  vertical-align: middle;
+}
+.content .form-content .title-info span.stress.all-income {
+  font-size: 18px;
+}

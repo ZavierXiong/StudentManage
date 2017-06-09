@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/menuLeft.css">
+    <link rel="stylesheet" href="../css/invest.css">
+</head>
+<body>
+    <div class="wrap">
+        <div id="menu">
+    <div  class="menu_btn" v-on:click="drop_menu">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+    <ul id="currone_menu" v-bind:class="{ 'select_btn' : isSelect, 'unselect_btn' : !isSelect }">
+        <a href="../dist/invest.html"><li class="invest">智能投资</li></a>
+        <a href="../dist/price.html"><li class="price">行情</li></a>
+        <a href="../dist/orderManage.html"><li class="orderManage">订单管理</li></a>
+        <a href="../dist/AccountSettings.html"> <li class="accountSetting">账号设置</li></a>
+        <a href="../dist/companyInfo.html"> <li class="companyInfo">企业信息</li></a>
+        <a href="../dist/staffManage.html"><li class="staffManage">员工管理</li></a>
+        <a href="../dist/systemAnnoce.html"> <li class="systemAnnoce">系统公告</li></a>
+    </ul>
+</div>
+<div id="user-login">
+    <h1 class="logo">IDtouguangLOGO</h1>
+    <div class="user-info">
+        <i class="user-pic"></i>
+        <span class="user-name">张三</span>
+        <span class="sign-out" v-on:click="signOut">退出</span>
+    </div>
+</div>
+
+
+        <div class="content">
+            <h3 class="title">智能投资</h3>
+            <div class="form-content">
+                <div class="title-info">
+                    <span class="week-money-rate data-title">7日年化</span>
+                    <span class="stress big-data">4.21%</span>
+                    <span class="data-title">累计收益</span>
+                    <span class="stress all-income">12.21% 222.00万</span>
+                    <span class="data-title">资金总额</span>
+                    <span class="gray-money">1,000万</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+<script src="../js/vue.js"></script>
+<script src="../js/commonLeft.js"></script>
+</html>

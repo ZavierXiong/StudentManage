@@ -1,0 +1,67 @@
+.content {
+  width: 96.5%;
+  float: right;
+}
+.content .title {
+  margin: 0;
+  padding: 20px 0;
+  background-color: #F2F2F2;
+  width: 100%;
+  text-align: center;
+}
+.content ul {
+  border: 1px solid #ccc;
+  border-left: 0;
+  border-right: 0;
+  border-bottom: 0;
+}
+.content ul li {
+  font-size: 14px;
+  color: rgba(51, 51, 51, 0.86666667);
+  height: 70px;
+  line-height: 70px;
+  border-bottom: 1px solid #ccc;
+  padding: 0 100px;
+}
+.content ul li .right-info {
+  float: right;
+}
+.content ul li span.left-info {
+  float: left;
+}
+.content ul li span.account-operation {
+  display: inline-block;
+  width: 65px;
+  margin-left: 20px;
+}
+.content ul li span.account-info.registration-date {
+  color: rgba(0, 0, 0, 0.86666667);
+}
+.content ul li span.account-info {
+  margin-right: 85px;
+}
+.content ul li .voucher-info span {
+  margin-right: 20px;
+}
+.content ul li .voucher-info span.identify-success {
+  margin-right: 0;
+}
+.content ul li.identify {
+  height: 160px;
+}
+.content ul li.identify .identify-pic {
+  float: right;
+}
+.content ul li.identify .identify-pic span {
+  margin-right: 20px;
+}
+.content ul li.identify .identify-pic .account-pic {
+  vertical-align: middle;
+  display: inline-block;
+  width: 104px;
+  height: 47px;
+  border: 1px solid red;
+}
+.content ul li.identify .identify-pic .account-pic.m-pic {
+  margin-right: 81px;
+}
