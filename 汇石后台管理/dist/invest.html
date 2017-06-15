@@ -9,6 +9,184 @@
     <link rel="stylesheet" href="../css/menuLeft.css">
     <link rel="stylesheet" href="../css/invest.css">
 </head>
+<style>
+    .invest{
+        background-color:#709ff4;
+        background-image:url('../images/invest-h.png')!important;
+        background-position: 20px 50%;
+        background-repeat: no-repeat;
+        color:#fff;
+    }
+    .form-content .title-info{
+        margin-bottom:60px;
+    }
+    #main{
+        border:1px solid #ccc;
+        float:left;
+        width:50%;
+        min-height:532px;
+    }
+    .view-operation{
+        float:right;
+        width:50%;
+        min-height:532px;
+    }
+    .content-echarts{
+        width:86%;
+        margin:0 auto;
+        overflow: auto;
+    }
+    .view-operation{
+        border:1px solid #ccc;
+    }
+    .view-operation-title{
+        color:#333;
+        font-size:14px;
+        height: 70px;
+        line-height: 70px;
+    }
+    .view-operation-title .title-l{
+        margin-left:40px;
+    }
+    .view-operation-title .title-r{
+        float: right;
+        margin-right:40px;
+    }
+    .view-operation-title .title-r.money{
+        font-size:18px;
+    }
+    .view-operation-title .title-r.money span{
+        font-size:14px;
+        margin-left:20px;
+        color:#0000ff;
+    }
+    .view-operation table{
+        font-size:14px;
+        border-top:1px solid #ccc;
+        width:100%;
+        padding:0 40px;
+    }
+    .view-operation table tr{
+        height:50px;
+        line-height:50px;
+    }
+    .view-operation table tr td:last-child{
+        float:right;
+        color:#0000ff;
+    }
+    .content-echarts-more{
+        border: 1px solid #ccc;
+        display: inline-block;
+        width: 50%;
+        color: #333;
+    }
+    .content-echarts-more .more-title{
+        text-align: center;
+        height: 50px;
+        line-height: 50px;
+        font-weight: 700;
+        font-size: 18px;
+    }
+    .content-echarts-more .more-tip{
+        border: 1px solid #ccc;
+        text-align: center;
+        color: #333;
+        font-size: 14px;
+        height: 50px;
+        background: rgba(255, 255, 204, 1);
+        line-height: 50px;
+    }
+    .content-echarts-more .more-operation{
+        padding: 20px 40px;
+    }
+    .content-echarts-more .more-operation-info{
+        height: 50px;
+        line-height: 50px;
+        margin:20px 0;
+    }
+    .content-echarts-more .more-operation-info .more-l{
+    }
+    .content-echarts-more .more-operation-info .more-r{
+        float:right;
+    }
+    .dead-line-input{
+        float: left;
+        border: 1px solid #9A9A9A;
+        width: 68px;
+        height: 50px;
+        background: #F2F2F2;
+        color: #999;
+        vertical-align: middle;
+        text-indent:10px;
+    }
+    .date{
+        width: 40px;
+        float: left;
+        height: 50px;
+        background-color: #F2F2F2;
+        border-left: 0;
+    }
+    .no-limit{
+        width: 46px;
+        height: 50px;
+        background: inherit;
+        background-color: rgba(255, 255, 255, 1);
+        box-sizing: border-box;
+        border:1px solid rgba(204, 204, 204, 1);
+        display: inline-block;
+        text-align: center;
+        margin-left: 10px;
+    }
+    .money-box{
+        position: relative;
+        clear: both;
+    }
+    .money-box input{
+        padding-right: 20px;
+        width: 165px;
+        height: 50px;
+        font-size:18px;
+        color: #000;
+        text-indent:10px;
+    }
+    .money-box .ten-thousand{
+        position: absolute;
+        right: 7px;
+        top: 0px;
+        color: #999;
+        font-size:18px;
+        font-weight:700px;
+    }
+    .operation-post{
+        display: inline-block;
+        text-align: center;
+        width: 100%;
+        height: 50px;
+        line-height: 50px;
+        background: #0066cc;
+        color: #fff;
+        font-size: 18px;
+        margin:20px 0;
+        cursor: pointer;
+    }
+    .friendly-warn{
+        color: #333;
+        font-size:14px;
+        display: inline-block;
+        width: 100%;
+        background-color: rgba(242, 242, 242, 1);
+        border:1px solid #ccc;
+        margin-top:40px;
+        padding-left:80px;
+        background-image:url('../images/f-warn.png');
+        background-repeat: no-repeat;
+        background-position:17px 50%;
+    }
+    .friendly-warn ul li{
+        height:30px;
+        line-height:30px;
+    }
+</style>
 <body>
     <div class="wrap">
         <div id="menu">
@@ -49,10 +227,227 @@
                     <span class="gray-money">1,000万</span>
                 </div>
             </div>
+            <div class="content-echarts" >
+                <div id="main"></div>
+                <div class="view-operation" v-if="!isModify">
+                    <div class="view-operation-title">
+                        <span class="title-l">日期</span>
+                        <span class="title-r">2017年4月3日</span>
+                    </div>
+                    <div class="view-operation-title">
+                        <span class="title-l">随时可用</span>
+                        <span class="title-r money">500万<span v-on:click="mymodify">修改</span></span>
+                    </div>
+                    <table>
+                        <tr>
+                            <td>买入</td>
+                            <td>日日金A</td>
+                            <td>工行</td>
+                            <td>400w</td>
+                            <td>2.4%</td>
+                            <td>修改</td>
+                        </tr>
+                        <tr>
+                            <td>买入</td>
+                            <td>日日金A</td>
+                            <td>工行</td>
+                            <td>400w</td>
+                            <td>2.4%</td>
+                            <td>修改</td>
+                        </tr>
+                        <tr>
+                            <td>买入</td>
+                            <td>日日金A</td>
+                            <td>工行</td>
+                            <td>400w</td>
+                            <td>2.4%</td>
+                            <td>修改</td>
+                        </tr>
+                        <tr>
+                            <td>买入</td>
+                            <td>日日金A</td>
+                            <td>工行</td>
+                            <td>400w</td>
+                            <td>2.4%</td>
+                            <td>修改</td>
+                        </tr>
+                        <tr>
+                            <td>买入</td>
+                            <td>日日金A</td>
+                            <td>工行</td>
+                            <td>400w</td>
+                            <td>2.4%</td>
+                            <td>修改</td>
+                        </tr>
+                        <tr>
+                            <td>买入</td>
+                            <td>日日金A</td>
+                            <td>工行</td>
+                            <td>400w</td>
+                            <td>2.4%</td>
+                            <td>修改</td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="content-echarts-more" v-if="isModify">
+                    <div class="more-title">随时可用</div>
+                    <div class="more-tip">修改随时可用资金在下一个工作日生效</div>
+                    <div class="more-operation">
+                        <div class="more-operation-info">
+                            <span class="more-l">开始日期</span>
+                            <span class="more-r">2017年4月3日</span>
+                        </div>
+                        <div class="more-operation-info">
+                            <span class="more-l">生效日期</span>
+                            <span class="more-r">2017年4月3日</span>
+                        </div>
+                        <div class="more-operation-info">
+                            <span class="more-l">期限</span>
+                            <span class="more-r">
+                            <input type="text" value="30" class="dead-line-input">
+                            <select class="date">
+                                <option value="1">日</option>
+                                <option value="1">月</option>
+                                <option value="1">年</option>
+                            </select>
+                            <span class="no-limit">不限</span>
+                        </span>
+                        </div>
+                        <div class="more-operation-info">
+                            <span class="more-l">随时可用</span>
+                            <div class="more-r money-box">
+                                <input type="text" value="500">
+                                <span class="ten-thousand">万</span>
+                            </div>
+                        </div>
+                        <div class="operation-post" v-on:click="mypost">提交</div>
+                    </div>
+                </div>
+                <div class="friendly-warn">
+                    <ul>
+                        <li>1. 据业内人士分析，影片票房扑街或许跟口碑过低有关，影片在烂番茄上的新鲜度仅为52%。</li>
+                        <li>2. 不过，影片今日（4月7日）才在中国内地上映，该片能不能在中国票仓上扳回一局还有待观察。</li>
+                        <li>3. 然而，想弥补一亿刀的亏损，意味着该片在中国内地的票房至少要达到7亿元人民币。</li>
+                    </ul>
+                </div>
+            </div>
         </div>
     </div>
 
 </body>
 <script src="../js/vue.js"></script>
+<script src="../js/echarts.js"></script>
 <script src="../js/commonLeft.js"></script>
+<script>
+    var myinvest = new Vue({
+        el : '.content',
+        data : {
+            isModify : false
+        },
+        methods :{
+            mymodify :function(){
+                this.isModify = true;
+            },
+            mypost : function(){
+                this.isModify = false;
+            }
+        }
+    });
+    myinvest.mymodify();
+    myinvest.mypost();
+</script>
+<script>
+    var myChart = echarts.init(document.getElementById('main'));
+
+    var option = {
+        xAxis : [
+            {
+                type : 'category',
+//                 name:'额度',
+                //这是设置的false，就不不显示下方的x轴，默认是true的
+                show: false,
+                //这里呢，就是每个柱的name了，根据实际情况下就好了，我就先写这三个
+//                    data : ['周日','周一','周二','周三','周四','周五','周六'],
+                axisLabel: {
+                    //这个是倾斜角度，也是考虑到文字过多的时候，方式覆盖采用倾斜
+//                     rotate: 30,
+                    //这里是考虑到x轴文件过多的时候设置的，如果文字太多，默认是间隔显示，设置为0，标示全部显示，当然，如果x轴都不显示，那也就没有意义了
+                    interval :0
+                }
+            },
+            {
+                type : 'category',
+//                 name:'额度',
+                //这是设置的false，就不不显示下方的x轴，默认是true的
+//                    show: false,
+                //这里呢，就是每个柱的name了，根据实际情况下就好了，我就先写这三个
+                data : ['周日','周一','周二','周三','周四','周五','周六'],
+                axisLabel: {
+                    //这个是倾斜角度，也是考虑到文字过多的时候，方式覆盖采用倾斜
+//                     rotate: 30,
+                    //这里是考虑到x轴文件过多的时候设置的，如果文字太多，默认是间隔显示，设置为0，标示全部显示，当然，如果x轴都不显示，那也就没有意义了
+                    interval :0
+                }
+            }
+        ],
+        yAxis : [
+            {
+                show:false,
+                type : 'value',
+//                    name:'数量',
+                //下面的就很简单了，最小是多少，最大是多少，默认一次增加多少
+                min: 0,
+                max: 100,
+                interval: 5,
+                //下面是显示格式化，一般来说还是用的上的
+                axisLabel: {
+                    formatter: '{value} 包'
+                },
+            }
+        ],
+
+        legend: {
+            data:['可用资金','收益趋势']
+        },
+        series : [
+            {
+                name: '可用资金',
+                type: 'bar',
+                itemStyle: {
+                    normal: {
+                        //好，这里就是重头戏了，定义一个list，然后根据所以取得不同的值，这样就实现了，
+                        color: function(params) {
+                            // build a color map as your need.
+                            var colorList = [
+                                'rgba(217, 234, 191, 0.498039215686275)'
+                            ];
+                            return colorList[params.dataIndex]
+                        },
+                        //以下为是否显示，显示位置和显示格式的设置了
+                        label: {
+                            show: true,
+                            position: 'top',
+//                             formatter: '{c}'
+                            formatter: '{b}\n{c}'
+                        }
+                    }
+                },
+                //设置柱的宽度，要是数据太少，柱子太宽不美观~
+                barWidth:70,
+                data: [5,10,20,25,15,20,50]
+            },
+            {
+                name:'收益趋势',
+                type:'line',
+                itemStyle : {  /*设置折线颜色*/
+                    normal : {
+                        color:'#24bf22'
+                    }
+                },
+                data: [5,10,20,25,15,20,50]
+            }
+        ]
+    };
+    myChart.setOption(option);
+</script>
 </html>

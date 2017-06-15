@@ -9,6 +9,15 @@
     <link rel="stylesheet" href="../css/menuLeft.css">
     <link rel="stylesheet" href="../css/acountmanage.css">
 </head>
+<style>
+    .accountSetting{
+        background-color:#709ff4;
+        background-image:url('../images/accountSetting-h.png')!important;
+        background-position: 20px 50%;
+        background-repeat: no-repeat;
+        color:#fff;
+    }
+</style>
 <body>
 <div class="wrap">
     <div id="menu">
@@ -37,14 +46,14 @@
 </div>
 
 
-    <div class="content">
+    <div class="content" id="account">
         <h3 class="title">账号信息</h3>
         <ul>
             <li>
                 <span class="left-info">昵称</span>
                 <div class="right-info">
-                    <span>稳如狗</span>
-                    <span class="account-operation">修改</span>
+                    <input type="text" value="稳如狗" v-bind:disabled="isdisabled" class="account-username">
+                    <span class="account-operation" v-on:click="edit_modify">修改</span>
                 </div>
             </li>
             <li>
@@ -103,4 +112,17 @@
 </body>
 <script src="../js/vue.js"></script>
 <script src="../js/commonLeft.js"></script>
+<script>
+    var myAccount = new Vue({
+        el : '#account',
+        data:{
+            isdisabled : true
+        },
+        methods :{
+            edit_modify:function(){
+                this.isdisabled=false
+            }
+        }
+    })
+</script>
 </html>

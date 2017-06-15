@@ -9,6 +9,15 @@
     <link rel="stylesheet" href="../css/menuLeft.css">
     <link rel="stylesheet" href="../css/orderManage.css">
 </head>
+<style>
+    .orderManage{
+        background-color:#709ff4;
+        background-image:url('../images/orderManage-h.png')!important;
+        background-position: 20px 50%;
+        background-repeat: no-repeat;
+        color:#fff;
+    }
+</style>
 <body >
 <div class="wrap" >
     <div id="menu">
@@ -69,7 +78,7 @@
             <span v-on:click="backlist" class="back-btn">< 返回</span>
             <span class="title">订单详细</span>
         </div>
-        <div>
+        <div class="detail-content">
             <div class="order-steps">
                 <span>确认订单</span>
                 <span>支付金额</span>
